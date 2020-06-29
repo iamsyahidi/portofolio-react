@@ -20,6 +20,17 @@ const renderField = ({ input, type, placeholder, label, disabled, readOnly, meta
 	</Row>
 );
 
+const mapStateToProps = (state) => {
+	return {
+		initialValues: {
+			nama: state.users.getUserDetail.nama,
+			noHP: state.users.getUserDetail.noHP,
+			alamat: state.users.getUserDetail.alamat,
+			umur: state.users.getUserDetail.umur,
+		},
+	};
+};
+
 class FormComponent extends Component {
 	render() {
 		return (
@@ -38,7 +49,7 @@ class FormComponent extends Component {
 
 					<Col md={6}>
 						<FormGroup>
-							<Field type="text" name="nohp" component={renderField} label="No HP :" />
+							<Field type="text" name="noHP" component={renderField} label="No HP :" />
 						</FormGroup>
 					</Col>
 
@@ -64,9 +75,9 @@ class FormComponent extends Component {
 }
 
 FormComponent = reduxForm({
-    form: 'formCreateUser',
-    validate: UserValidation,
+	form: 'formCreateUser',
+	validate: UserValidation,
 	enableReinitialize: true,
 })(FormComponent);
 
-export default connect()(FormComponent);
+export default connect(mapStateToProps, null)(FormComponent);

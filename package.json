@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "eslint-plugin-import": "^2.21.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-axios": "^2.0.3",
@@ -26,7 +27,8 @@
     "reactstrap": "^8.4.1",
     "redux": "^4.0.5",
     "redux-form": "^8.3.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
